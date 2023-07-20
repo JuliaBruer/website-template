@@ -1,5 +1,6 @@
         * {
             box-sizing: border-box;
+            margin: 0;
             font-family: Helvetica, Arial, sans-serif;
         }
 
@@ -8,16 +9,15 @@
         }
         
         body {
-            margin: 0;
             padding: 0;
         }
         
-         :root {
+        :root {
             --color1: #dbbbb4;
             --color2: rgb(71, 14, 52);
         }
+
         /* header starts here */
-        
         input[type=checkbox] {
             display: none;
         }
@@ -58,45 +58,6 @@
             color: var(--color2);
         }
         
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                position: absolute;
-                background-color: var(--color1);
-                right: 0;
-                left: 0;
-                text-align: center;
-                padding: 16px 0;
-            }
-            nav ul li {
-                display: flex;
-                text-align: center;
-            }
-            .menu li a {
-                text-decoration: none;
-                padding-left: 25px;
-            }
-            .menu li:hover {
-                background-color: var(--color1);
-                transition-duration: 0.3s ease;
-                display: flex;
-                text-align: center;
-            }
-            .menu li+li {
-                margin-top: 12px;
-            }
-            input[type=checkbox]:checked~.menu {
-                display: block;
-                z-index: 5;
-                background-color: var(--color1);
-            }
-            .hamburger {
-                display: block;
-                color: var(--color2);
-                background-color: var(--color1);
-            }
-        }
-        
         .bg-image {
             filter: blur(8px);
             -webkit-filter: blur(8px);
@@ -124,8 +85,8 @@
             padding: 20px;
             text-align: center;
         }
+
         /* main starts here */
-        
         .text {
             margin: 40px;
             padding: 70px;
@@ -167,10 +128,6 @@
             padding-top: 30px;
         }
         
-        .row {
-            margin: 8px -16px;
-        }
-        
         .row,
         .row>.column {
             padding: 8px;
@@ -186,24 +143,11 @@
             padding: 10px;
         }
         
-        @media screen and (max-width: 900px) {
-            .column {
-                width: 50%;
-            }
-        }
-        
-        @media screen and (max-width: 600px) {
-            .column {
-                width: 100%;
-            }
-        }
-        
         #aboutUs {
             background-color: var(--color2);
             color: white;
             font-size: 22px;
-            padding: 100px 150px 50px 50px;
-            margin: 120px -150px 20px 50px;
+            padding: 70px;
         }
         
         #aboutUs p::first-letter{
@@ -214,12 +158,20 @@
         }
 
         .image {
-            width: 100%;
+            width: 50%;
             height: auto;
-            margin: 150px 50px 50px 50px;
+            margin-bottom: -100px;
+            margin-top: 50px;
+            margin-right: 30px;
         }
+
+        .img-container {
+            z-index: 2;
+            display: flex;
+            justify-content: flex-end;
+        }
+
         /* footer starts here */
-        
         #Kontakt {
             margin: 0 40px;
             padding: 20px;
@@ -303,4 +255,78 @@
             font-size: 14px;
             color: var(--color2);
             text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+
+            .text {
+                margin: 70px 15px 15px 15px;
+                padding: 20px;
+            }
+
+            .quote {
+                margin: 15px;
+            }
+
+            .main {
+                margin: 15px;
+            }
+
+            #aboutUs {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                background-color: var(--color1);
+                right: 0;
+                left: 0;
+                text-align: center;
+                padding: 16px 0;
+            }
+            nav ul li {
+                display: flex;
+                text-align: center;
+            }
+            .menu li a {
+                text-decoration: none;
+                padding-left: 25px;
+            }
+            .menu li:hover {
+                background-color: var(--color1);
+                transition-duration: 0.3s ease;
+                display: flex;
+                text-align: center;
+            }
+            .menu li+li {
+                margin-top: 12px;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: block;
+                z-index: 5;
+                background-color: var(--color1);
+            }
+            .hamburger {
+                display: block;
+                color: var(--color2);
+                background-color: var(--color1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+
+            .image {
+                width: 50%;
+                height: auto;
+                margin: 50px 20px -50px 0;
+            }
         }
